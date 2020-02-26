@@ -1,0 +1,14 @@
+{
+	"items": [
+		{ "id": "Queso", "price": "1.35" },
+		{ "id": "Guacamole", "price": "2.35" },
+		{ "id": "Fresh Tomato Salsa", "price": "0.00" },
+		{ "id": "Roasted Chili Corn Salsa", "price": "0.00" },
+		{ "id": "Tomatillo-Green Chili Salsa", "price": "0.00" },
+		{ "id": "Tomatillo-Red Chili Salsa", "price": "0.00" },
+		{ "id": "Sour Cream", "price": "0.00" },
+		{ "id": "Fajita Veggies", "price": "0.00" },
+		{ "id": "Cheese", "price": "0.00" },
+		{ "id": "Romaine Lettuce", "price": "0.00" }
+	]
+}

@@ -1,0 +1,10 @@
+{
+	"items": [
+		{ "id": "Carne Asada", "price": "9.25" },
+		{ "id": "Barbacoa", "price": "8.50" },
+		{ "id": "Steak", "price": "8.50" },
+		{ "id": "Carnitas", "price": "8.00" },
+		{ "id": "Chicken", "price": "7.95" },
+		{ "id": "Sofritas", "price": "7.95" }
+	]
+}

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!-- MATERIALIZE -->
+		<!-- Compiled and minified CSS -->
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+		/>
+		<!-- Compiled and minified JavaScript -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+		<!--Let browser know website is optimized for mobile-->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<!-- Import Open Sans Condensed -->
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300&display=swap" rel="stylesheet" />
+
+		<!-- import jquery -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<script
+			src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min.js"
+			integrity="sha256-FiZMk1zgTeujzf/+vomWZGZ9r00+xnGvOgXoj0Jo1jA="
+			crossorigin="anonymous"
+		></script>
+
+		<!-- import icons -->
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+
+		<title>Wootton Chipotle</title>
+	</head>
+	<body>
+		<div id="root"></div>
+		<ul class="collapsible"></ul>
+	</body>
+	<script src="./homepage.js"></script>
+
+	<script
+		src="https://www.paypal.com/sdk/js?client-id=AUZR0mZm0gLkrRxp09vtcfVqLnRJ15gR8qa_p4OLnY2GBgrV3dh5aX9z6wphi1kJlqrek_McjNPaI11R&currency=USD"
+		data-sdk-integration-source="button-factory"
+	></script>
+	<script>
+		sendOrderData = function() {
+			fetch(
+				"http://71.114.76.159:3001//order?order=" + document.getElementById("orderdetails").innerHTML
+			).then(res => res.text());
+		};
+
+		paypal
+			.Buttons({
+				style: {
+					shape: "rect",
+					color: "white",
+					layout: "vertical",
+					label: "pay"
+				},
+				createOrder: function(data, actions) {
+					return actions.order.create({
+						purchase_units: [
+							{
+								amount: {
+									value: totalAmount()
+								}
+							}
+						]
+					});
+				},
+				onApprove: function(data, actions) {
+					sendOrderData();
+
+					return actions.order.capture().then(function(details) {
+						alert("Transaction completed by " + details.payer.name.given_name + "!");
+					});
+				}
+			})
+			.render("#paypal-button-container");
+
+		totalAmount = function() {
+			rawTotal = $("#totalPriceHolder")[0].innerHTML;
+			rawTotal = rawTotal.substring(rawTotal.indexOf("$") + 1, rawTotal.length);
+			total = parseFloat(rawTotal);
+			return total;
+		};
+	</script>
+	<link rel="stylesheet" href="./index.css" />
+</html>

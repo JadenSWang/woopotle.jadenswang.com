@@ -1,0 +1,15 @@
+{
+	"items": [
+		{ "id": "Chips", "price": "1.45" },
+		{ "id": "Chips & Guacamole", "price": "3.80" },
+		{ "id": "Chips & Queso", "price": "3.80" },
+		{ "id": "Large Chips & Large Guacamole", "price": "6.15" },
+		{ "id": "Side of Guacamole", "price": "2.35" },
+		{ "id": "Large Queso & Large Chips", "price": "6.15" },
+		{ "id": "Side of Queso", "price": "2.35" },
+		{ "id": "Chips & Fresh Tomato Salsa", "price": "2.10" },
+		{ "id": "Chips & Tomatillo-Red Chilil Salsa", "price": "2.10" },
+		{ "id": "Chips & Tomatillo-Green Chili Salsa", "price": "2.10" },
+		{ "id": "Chips & Roasted Chili-Corn Salsa", "price": "2.10" }
+	]
+}
